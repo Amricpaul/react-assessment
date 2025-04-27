@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme{
+   --font-nyt: 'PT Serif', serif;
+   --font-sans: 'Lato', system-ui, sans-serif;
+   --font-display: 'Lato', system-ui, sans-serif;
+   --color-primary: #2B2C41;
+   --color-secondary: #A9DBB8;
+   --color-accent: #78BA8C;
+   --color-body: #f6f4f0;
+   --color-text: #2B2C41;
+}
+
+:root {
+  font-family: 'Lato', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  font-family: 'Lato', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-body);
+}
