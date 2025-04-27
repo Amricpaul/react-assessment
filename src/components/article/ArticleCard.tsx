@@ -6,12 +6,17 @@ import {
   Clock,
 } from 'lucide-react';
 
-interface ArticleCardProps extends ArticleType {}
+type ArticleCardProps = ArticleType;
+
+interface MediaMetadata {
+  format: string;
+  url: string;
+}
 
 export class ArticleCard extends Component<ArticleCardProps> {
   private getImageUrl(): string | undefined {
     return this.props.media?.[0]?.['media-metadata']?.find(
-      (item: any) => item.format === 'mediumThreeByTwo440'
+      (item: MediaMetadata) => item.format === 'mediumThreeByTwo440'
     )?.url || '/placeholder.svg';
   }
 

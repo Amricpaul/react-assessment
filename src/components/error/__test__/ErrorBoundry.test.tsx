@@ -42,7 +42,6 @@ describe('ErrorBoundary', () => {
 
   it('renders error UI when an error occurs', () => {
     // Use a try-catch to handle the error
-    let errorUI;
     try {
       render(
         <MemoryRouter>
@@ -53,6 +52,7 @@ describe('ErrorBoundary', () => {
       );
     } catch (error) {
       // This is expected, the ErrorBoundary should catch it
+     console.log('Error:', error);
     }
 
     // Re-render to see the error UI
@@ -65,7 +65,7 @@ describe('ErrorBoundary', () => {
     );
 
     expect(screen.getByText('500')).toBeInTheDocument();
-    expect(screen.getByText("Oops! that's our bad")).toBeInTheDocument();
+    expect(screen.getByText("Oops! that is our bad")).toBeInTheDocument();
     expect(screen.getByText('Try Again')).toBeInTheDocument();
   });
 
@@ -80,6 +80,7 @@ describe('ErrorBoundary', () => {
         </ErrorBoundary>
       );
     } catch (error) {
+      console.log('Error:', error);
       // This is expected, the ErrorBoundary should catch it
     }
 
@@ -109,6 +110,7 @@ describe('ErrorBoundary', () => {
       );
     } catch (error) {
       // This is expected, the ErrorBoundary should catch it
+      console.log('Error:', error);
     }
 
     // Re-render to see the error UI

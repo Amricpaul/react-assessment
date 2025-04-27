@@ -68,9 +68,9 @@ class ArticleDetailsClass extends Component<ArticleDetailsProps, ArticleDetailsS
         );
     };
 
-    private getImageUrl(media: any): string | undefined {
+    private getImageUrl(media: ArticleType['media']): string | undefined {
         return media?.[0]?.['media-metadata']?.find(
-          (item: any) => item.format === 'mediumThreeByTwo440'
+          (item) => item.format === 'mediumThreeByTwo440'
         )?.url || '/placeholder.svg';
       }
 

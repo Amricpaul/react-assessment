@@ -1,9 +1,8 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ArticleList } from '../ArticleList';
-import { ArticleContext } from '@/context/ArticleContext';
-import { Article } from '@/types/Article';
+import { ArticleContext, ArticleContextType } from '@/context/ArticleContext';
 import { MemoryRouter } from 'react-router';
-
+import { Article } from '@/types/Article';
 // Mock data
 const mockArticles: Article[] = [
   {
@@ -49,7 +48,7 @@ const mockArticles: Article[] = [
 describe('ArticleList', () => {
   const mockFetchArticles = jest.fn();
 
-  const renderWithContext = (contextValue: any) => {
+  const renderWithContext = (contextValue: ArticleContextType) => {
     return render(
       <MemoryRouter>
         <ArticleContext.Provider value={contextValue}>
