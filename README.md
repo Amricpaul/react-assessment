@@ -79,7 +79,7 @@ npx cypress open
 
 To run ESLint:
 ```bash
-npm run lint
+npm run eslint
 ```
 
 ## Project Structure

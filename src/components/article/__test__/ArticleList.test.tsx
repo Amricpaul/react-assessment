@@ -48,7 +48,7 @@ const mockArticles: Article[] = [
 describe('ArticleList', () => {
   const mockFetchArticles = jest.fn();
 
-  const renderWithContext = (contextValue: ArticleContextType) => {
+  const renderWithContext = (contextValue: ArticleContextType | undefined) => {
     return render(
       <MemoryRouter>
         <ArticleContext.Provider value={contextValue}>
